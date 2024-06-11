@@ -1,0 +1,82 @@
+/* PortraitPortfolio.css */
+
+.family-portfolio {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 50px;
+    padding:0  20vh;
+  }
+  
+  .family-item {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 0;
+    padding-bottom: 150%; /* Adjust aspect ratio for portrait images */
+  }
+  
+  .family-item img {
+    position: absolute;
+    width: 100%;
+    transition: transform 0.3s ease;
+  }
+  
+  .family-item:hover img {
+    transform: scale(1.1);
+  }
+  
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  
+  .portrait-item:hover .overlay {
+    opacity: 1;
+    cursor: pointer;
+  }
+  
+  .overlay p {
+    color: #fff;
+    font-size: 14px;
+    text-align: center;
+  }
+  
+  /* Portrait Image Carousel */
+  .family-carousel {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+  }
+  
+  .family-carousel img {
+    max-width: 90%;
+    max-height: 90%;
+    object-fit: contain;
+  }
+  
+  .full-screen-button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-color: transparent;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+  }
+  
